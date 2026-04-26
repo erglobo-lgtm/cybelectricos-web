@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>C&B Electricidad | Electricistas en Sevilla</title>
+
+  <meta name="description" content="Electricistas profesionales en Sevilla. Urgencias, instalaciones, boletines y mantenimiento eléctrico." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:Inter,sans-serif;background:#08111f;color:#fff;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+
+    .container{max-width:1200px;margin:auto;padding:0 20px}
+
+    .btn{
+      background:#ffc107;
+      color:#000;
+      padding:14px 22px;
+      border-radius:12px;
+      font-weight:700;
+      display:inline-block;
+    }
+
+    nav{
+      background:rgba(8,17,31,.95);
+      position:sticky;
+      top:0;
+      z-index:10;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    nav .wrap{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:14px 0;
+    }
+
+    .hero{
+      padding:80px 0;
+      background:linear-gradient(135deg,#08111f,rgba(8,17,31,.6)),url('fondo-hero.png') center/cover;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr 1fr;
+      gap:30px;
+      align-items:center;
+    }
+
+    h1{font-size:3rem;line-height:1.1}
+    .accent{color:#ffc107}
+    .lead{color:#cbd5e1;margin:20px 0}
+
+    .card-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+      padding:60px 0;
+    }
+
+    .card{
+      background:#101c31;
+      padding:22px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+      align-items:center;
+      padding:60px 0;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:15px;
+      padding-bottom:60px;
+    }
+
+    .gallery img{
+      border-radius:14px;
+      height:220px;
+      object-fit:cover;
+    }
+
+    footer{
+      padding:30px;
+      text-align:center;
+      color:#94a3b8;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+
+    .mobile-bar{
+      position:fixed;
+      bottom:0;
+      left:0;
+      right:0;
+      display:flex;
+      z-index:99;
+    }
+
+    .mobile-bar a{
+      flex:1;
+      padding:14px;
+      text-align:center;
+      font-weight:700;
+    }
+
+    .mobile-bar a:first-child{
+      background:#ffc107;
+      color:#000;
+    }
+
+    .mobile-bar a:last-child{
+      background:#0b1b33;
+      color:#fff;
+    }
+
+    @media(max-width:900px){
+      h1{font-size:2rem}
+      .hero-grid,.card-grid,.split,.gallery{grid-template-columns:1fr}
+    }
+  </style>
+
+  <!-- GA4 (OPCIONAL - reemplazar ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+
+    function trackEvent(name){
+      gtag('event', name);
+    }
+  </script>
+
+  <!-- META PIXEL (OPCIONAL - reemplazar ID) -->
+  <script>
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init','YOUR_META_PIXEL_ID');
+    fbq('track','PageView');
+  </script>
+
+  <script>
+    function trackWhatsApp(){
+      trackEvent('lead_whatsapp');
+      if(typeof fbq !== 'undefined') fbq('track','Lead');
+    }
+
+    function trackCall(){
+      trackEvent('lead_call');
+      if(typeof fbq !== 'undefined') fbq('track','Contact');
+    }
+  </script>
+
+</head>
+
+<body>
+
+<nav>
+  <div class="container wrap">
+    <img src="logo.jpg" alt="C&B Electricidad" style="height:50px;border-radius:10px">
+    <a href="tel:+34677208312" class="btn" onclick="trackCall()">Llamar</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div>
+      <h1>Electricista urgente en <span class="accent">Sevilla</span></h1>
+      <p class="lead">Averías eléctricas, instalaciones y boletines con respuesta rápida.</p>
+
+      <a class="btn"
+         href="https://wa.me/34677208312"
+         onclick="trackWhatsApp()">
+        WhatsApp Presupuesto
+      </a>
+    </div>
+
+    <img src="electricista.jpg" alt="Electricista profesional" style="border-radius:18px">
+  </div>
+</section>
+
+<section class="container card-grid">
+  <div class="card"><h3>Urgencias</h3><p>Atención rápida 24/7.</p></div>
+  <div class="card"><h3>Instalaciones</h3><p>Viviendas y negocios.</p></div>
+  <div class="card"><h3>Boletines</h3><p>Certificados oficiales.</p></div>
+</section>
+
+<section class="container split">
+  <img src="flyer.jpg" alt="Servicios" style="border-radius:18px">
+
+  <div>
+    <h2>Trabajo profesional garantizado</h2>
+    <p>Servicio rápido, limpio y con garantía real.</p>
+  </div>
+</section>
+
+<section class="container">
+  <h2>Galería</h2>
+  <div class="gallery">
+    <img src="marketing.jpg">
+    <img src="stickers.png">
+    <img src="logo.jpg">
+  </div>
+</section>
+
+<section class="container" style="padding:40px 0">
+  <h2>Opiniones</h2>
+
+  <div class="card-grid">
+    <div class="card">“Muy rápido y profesional”</div>
+    <div class="card">“Buen precio y atención excelente”</div>
+    <div class="card">“Recomendado 100%”</div>
+  </div>
+</section>
+
+<footer>
+  © 2026 C&B Electricidad · Sevilla
+</footer>
+
+<!-- MOBILE CTA -->
+<div class="mobile-bar">
+  <a href="tel:+34677208312" onclick="trackCall()">📞 Llamar</a>
+  <a href="https://wa.me/34677208312" onclick="trackWhatsApp()">💬 WhatsApp</a>
+</div>
+
+</body>
+  </html>
